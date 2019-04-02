@@ -5,6 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
+import { HomeComponent } from './home/home.component';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -12,6 +13,8 @@ import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 
 import { DishService } from './services/dish.service';
+import { PromotionService } from './services/promotion.service';
+import { LeaderService } from './services/leader.service';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 
 import { baseURL } from './shared/baseurl';
@@ -29,6 +32,7 @@ import { baseURL } from './shared/baseurl';
     ],
     declarations: [
         AppComponent,
+        HomeComponent,
         MenuComponent,
         DishdetailComponent,
 
@@ -36,6 +40,8 @@ import { baseURL } from './shared/baseurl';
     providers: [
         {provide: 'baseURL', useValue: baseURL},
         DishService,
+        PromotionService,
+        LeaderService,
         ProcessHTTPMsgService,
     ],
     schemas: [
